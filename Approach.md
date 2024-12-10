@@ -31,22 +31,4 @@ Constraints are defined to:
 	•	Total population covered ( y_{ij} ).
 	•	Detailed analysis of coverage efficiency and resource allocation.
 
-4. A Matrix Implementation
 
-The matrix  A  is split into three subcategories for the problem formulation:
-	1. Main  A  Matrix:
-		•	The  x  and  y  variables are split due to the column indexing formula:  i \times W + j .
-		•	Using the neighbor-offsets formula for di, dj in [(0, 0), (-1, 0), (1, 0), (0, -1), (0, 1)], all neighboring regions are identified.
-		•	Example: For  W = 6, H = 4 , to find the column index of  x_{23} :
-		•	Use  i = 1, W = 6, j = 2 .
-		•	Column index =  1 * 6 + 2 = 8 .
-		•	The  A -matrix columns proceed as follows:  x_{11}  (0th col),  x_{12}  (1st col),  x_{13}  (2nd col), …,  x_{23}  (8th col).
-		•	Every neighbor’s row, column, and data index are appended accordingly.
-	2. Right-Side of the  A -Matrix:
-		•	Corresponds to the -y_{ij} part of the constraint matrix.
-		•	Includes a diagonal entry of -1 for each  y_{ij}  until the last entry.
-	3. Last Row of the  A -Matrix:
-		•	Represents the budget constraint.
-		•	Sums all  x_{ij}  variables to ensure =< T , the maximum number of towers allowed.
-
-  

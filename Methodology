@@ -2,7 +2,7 @@
 
 The matrix  A  is split into three subcategories for the problem formulation:
 	1. Main  A  Matrix:
-		•	The  x  and  y  variables are split due to the column indexing formula:  i \times W + j .
+		•	The  x  and  y  variables are split due to the column indexing formula:  i * W + j .
 		•	Using the neighbor-offsets formula for di, dj in [(0, 0), (-1, 0), (1, 0), (0, -1), (0, 1)], all neighboring regions are identified.
 		•	Example: For  W = 6, H = 4 , to find the column index of  x_{23} :
 		•	Use  i = 1, W = 6, j = 2 .
